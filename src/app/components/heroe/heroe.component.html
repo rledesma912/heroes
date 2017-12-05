@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+
+      <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">Fecha de surgimiento: {{ heroe.aparicion | date:'y' }}</div>
+        <div class="card-body text-primary">
+          <h4 class="card-title">{{ heroe.nombre }}</h4>
+          <p class="card-text">{{ heroe.bio }}</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+    </div>
+    <div class="col-sm-4">
+      <img class="img-logo-casa" *ngIf="heroe.casa == 'DC'" src="../assets/img/dc.png">
+      <img class="img-logo-casa" *ngIf="heroe.casa == 'Marvel'" src="../assets/img/Marvel.png">
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <a [routerLink]="['/heroes']">Volver...</a>
+    </div>
+  </div>
+</div>

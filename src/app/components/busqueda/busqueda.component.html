@@ -1,0 +1,28 @@
+
+
+<div  class="row">
+  <div class="col-md-offset-12" *ngIf="heroes.length < 1" >
+    <div class="alert alert-info" role="alert">
+      No se encontraron resultados para {{ texto }}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+
+  <div class="card animated fadeIn fast" *ngFor="let h of heroes; let i = index">
+    <img class="card-img-top img-fluid" [src]="h.img" [alt]="h.nombre">
+    <div class="card-block">
+      <h4 class="card-title">{{h.nombre}}</h4>
+      <p class="card-text">{{h.bio}}</p>
+      <p class="card-text"><small class="text-muted">{{h.aparicion}}</small></p>
+
+      <button (click)="verHeroe(i)"
+        type="button"
+        class="btn btn-outline-primary btn-block" >Ver m&aacute;s...</button>
+      <br>
+      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary" >Ver más link...</a> -->
+    </div>
+  </div>
+
+</div>
